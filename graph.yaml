@@ -4,18 +4,17 @@ goals:
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
 topics:
+  # Existing topics
   - id: motor_control_fundamentals
     name: Motor Control Fundamentals
     level: intermediate
     prerequisites: []
-
   - id: foc
     name: Field-Oriented Control (FOC)
     level: intermediate
     prerequisites:
       - motor_control_fundamentals
       - control_theory
-
   - id: kalman_filter
     name: Kalman Filter
     level: beginner
@@ -23,143 +22,329 @@ topics:
       - linear_algebra
       - probability
       - state_space_model
-
   - id: imu_sensor_fusion
     name: IMU Sensor Fusion
     level: beginner
     prerequisites:
       - kalman_filter
       - quaternion_math
-
   - id: pid_control
     name: PID Control
     level: intermediate
     prerequisites:
       - control_theory
-
   - id: lqr_control
     name: Linear Quadratic Regulator (LQR)
     level: intermediate
     prerequisites:
       - state_space_model
       - optimal_control
-
   - id: pll
     name: Phase-Locked Loop (PLL)
     level: beginner
     prerequisites:
       - signal_processing
-
   - id: control_theory
     name: Control Theory
     level: advanced
     prerequisites: []
-
   - id: linear_algebra
     name: Linear Algebra
     level: intermediate
     prerequisites: []
-
   - id: probability
     name: Probability and Random Processes
     level: intermediate
     prerequisites: []
-
   - id: state_space_model
     name: State-Space Models
     level: intermediate
     prerequisites:
       - linear_algebra
       - control_theory
-
   - id: quaternion_math
     name: Quaternion Mathematics
     level: beginner
     prerequisites:
       - linear_algebra
-
   - id: optimal_control
     name: Optimal Control
     level: advanced
     prerequisites:
       - control_theory
       - linear_algebra
-
   - id: signal_processing
     name: Signal Processing Basics
     level: intermediate
     prerequisites:
       - linear_algebra
 
+  # New topics
+  - id: pmsm_model
+    name: PMSM Model
+    level: intermediate
+    prerequisites:
+      - motor_control_fundamentals
+      - linear_algebra
+      - control_theory
+  - id: ladrc
+    name: Linear Active Disturbance Rejection Control (LADRC)
+    level: intermediate
+    prerequisites:
+      - control_theory
+      - state_space_model
+      - pmsm_model
+  - id: eso
+    name: Extended State Observer (ESO)
+    level: intermediate
+    prerequisites:
+      - state_space_model
+      - control_theory
+  - id: hall_sensor_calibration
+    name: Hall Sensor Calibration
+    level: beginner
+    prerequisites:
+      - motor_control_fundamentals
+      - signal_processing
+  - id: cogging_compensation
+    name: Cogging Torque Compensation
+    level: intermediate
+    prerequisites:
+      - pmsm_model
+      - signal_processing
+  - id: friction_compensation
+    name: Friction Compensation
+    level: intermediate
+    prerequisites:
+      - pmsm_model
+      - signal_processing
+  - id: svpwm
+    name: Space Vector PWM (SVPWM)
+    level: intermediate
+    prerequisites:
+      - foc
+  - id: dead_time_compensation
+    name: Dead-Time Compensation
+    level: intermediate
+    prerequisites:
+      - svpwm
+      - signal_processing
+  - id: frf_analysis
+    name: Frequency Response Analysis
+    level: advanced
+    prerequisites:
+      - signal_processing
+      - state_space_model
+  - id: modal_identification
+    name: Modal Identification
+    level: advanced
+    prerequisites:
+      - frf_analysis
+  - id: gimbal_disturbance_rejection
+    name: Gimbal Disturbance Rejection
+    level: intermediate
+    prerequisites:
+      - ladrc
+      - eso
+      - pmsm_model
+  - id: robot_trajectory_optimization
+    name: Robot Trajectory Optimization
+    level: intermediate
+    prerequisites:
+      - optimal_control
+      - linear_algebra
+      - state_space_model
+  - id: kinodynamic_planning
+    name: Kinodynamic Planning
+    level: advanced
+    prerequisites:
+      - robot_trajectory_optimization
+      - state_space_model
+  - id: polynomial_optimization
+    name: Polynomial Trajectory Optimization
+    level: intermediate
+    prerequisites:
+      - optimal_control
+      - linear_algebra
+  - id: svsdf
+    name: Swept Volume Signed Distance Field (SVSDF)
+    level: advanced
+    prerequisites:
+      - signal_processing
+      - robot_trajectory_optimization
+  - id: continuous_collision_avoidance
+    name: Continuous Collision Avoidance
+    level: advanced
+    prerequisites:
+      - kinodynamic_planning
+      - svsdf
+
 skills:
+  # Existing skills
   - id: implement_foc_hc32f460
     name: Implement FOC on HC32F460
     requires:
       - foc
       - motor_control_fundamentals
       - hc32f460_platform
-
   - id: tune_pid_controllers
     name: Tune PID Controllers
     requires:
       - pid_control
       - control_theory
-
   - id: implement_kalman_filter_c
     name: Implement Kalman Filter in C
     requires:
       - kalman_filter
       - hc32f460_platform
       - numerical_stability
-
   - id: implement_sensor_fusion
     name: Implement Sensor Fusion Algorithm
     requires:
       - imu_sensor_fusion
       - kalman_filter
       - quaternion_math
-
   - id: design_lqr_controller
     name: Design LQR Controller
     requires:
       - lqr_control
       - state_space_model
-
   - id: implement_pll
     name: Implement Phase-Locked Loop
     requires:
       - pll
       - signal_processing
-
   - id: hc32f460_platform
     name: HC32F460 MCU Platform
     requires: []
-
   - id: numerical_stability
     name: Numerical Stability
     requires:
       - linear_algebra
 
+  # New skills
+  - id: implement_ladrc_controller
+    name: Implement LADRC Controller
+    requires:
+      - ladrc
+      - pmsm_model
+      - eso
+  - id: design_eso
+    name: Design Extended State Observer
+    requires:
+      - eso
+      - state_space_model
+      - signal_processing
+  - id: calibrate_hall_sensors
+    name: Calibrate Hall Sensors
+    requires:
+      - hall_sensor_calibration
+      - motor_control_fundamentals
+  - id: implement_cogging_compensation
+    name: Implement Cogging Compensation
+    requires:
+      - cogging_compensation
+      - pmsm_model
+  - id: implement_friction_compensation
+    name: Implement Friction Compensation
+    requires:
+      - friction_compensation
+      - pmsm_model
+  - id: implement_svpwm
+    name: Implement SVPWM with Dead-Time Compensation
+    requires:
+      - svpwm
+      - dead_time_compensation
+      - foc
+  - id: perform_frf_analysis
+    name: Perform Frequency Response Analysis
+    requires:
+      - frf_analysis
+      - modal_identification
+  - id: perform_modal_identification
+    name: Perform Modal Identification
+    requires:
+      - modal_identification
+      - frf_analysis
+  - id: implement_gimbal_disturbance_rejection
+    name: Implement Gimbal Disturbance Rejection
+    requires:
+      - gimbal_disturbance_rejection
+      - implement_ladrc_controller
+      - design_eso
+      - pmsm_model
+  - id: design_trajectory_optimization
+    name: Design Trajectory Optimization Algorithm
+    requires:
+      - robot_trajectory_optimization
+      - polynomial_optimization
+      - state_space_model
+  - id: implement_kinodynamic_planner
+    name: Implement Kinodynamic Planner
+    requires:
+      - kinodynamic_planning
+      - robot_trajectory_optimization
+  - id: implement_svsdf
+    name: Implement SVSDF
+    requires:
+      - svsdf
+      - continuous_collision_avoidance
+  - id: implement_continuous_collision_avoidance
+    name: Implement Continuous Collision Avoidance
+    requires:
+      - continuous_collision_avoidance
+      - kinodynamic_planning
+      - svsdf
+  - id: implement_polynomial_optimizer
+    name: Implement Polynomial Trajectory Optimizer
+    requires:
+      - polynomial_optimization
+      - optimal_control
+
 projects:
+  # Existing projects
   - id: motor_control_platform_project
     name: Motor Control Platform on HC32F460
     requires:
       - implement_foc_hc32f460
       - tune_pid_controllers
       - implement_kalman_filter_c
-
   - id: gimbal_control_algorithm_project
     name: Gimbal Control Algorithm Implementation
     requires:
       - implement_sensor_fusion
       - design_lqr_controller
 
+  # New projects
+  - id: gimbal_disturbance_rejection_project
+    name: Gimbal Disturbance Rejection Project
+    requires:
+      - implement_ladrc_controller
+      - design_eso
+      - implement_cogging_compensation
+      - implement_friction_compensation
+      - implement_gimbal_disturbance_rejection
+  - id: advanced_motor_control_project
+    name: Advanced Motor Control Project
+    requires:
+      - implement_svpwm
+      - implement_cogging_compensation
+      - implement_friction_compensation
+      - perform_frf_analysis
+      - perform_modal_identification
+  - id: planning_algorithms_project
+    name: Robot Planning Algorithms Project
+    requires:
+      - design_trajectory_optimization
+      - implement_polynomial_optimizer
+      - implement_kinodynamic_planner
+      - implement_continuous_collision_avoidance
+      - implement_svsdf
+
 memory:
   - id: motor_model
     name: Motor Model
-
   - id: hall_linearization
     name: Hall Linearization
-
   - id: build_environment
     name: Build Environment
