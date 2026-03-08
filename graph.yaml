@@ -1,0 +1,165 @@
+goals:
+  - master advanced motor control and estimation
+  - optimize gimbal control algorithms using optimal control
+  - integrate AI agents effectively into development workflow
+
+topics:
+  - id: motor_control_fundamentals
+    name: Motor Control Fundamentals
+    level: intermediate
+    prerequisites: []
+
+  - id: foc
+    name: Field-Oriented Control (FOC)
+    level: intermediate
+    prerequisites:
+      - motor_control_fundamentals
+      - control_theory
+
+  - id: kalman_filter
+    name: Kalman Filter
+    level: beginner
+    prerequisites:
+      - linear_algebra
+      - probability
+      - state_space_model
+
+  - id: imu_sensor_fusion
+    name: IMU Sensor Fusion
+    level: beginner
+    prerequisites:
+      - kalman_filter
+      - quaternion_math
+
+  - id: pid_control
+    name: PID Control
+    level: intermediate
+    prerequisites:
+      - control_theory
+
+  - id: lqr_control
+    name: Linear Quadratic Regulator (LQR)
+    level: intermediate
+    prerequisites:
+      - state_space_model
+      - optimal_control
+
+  - id: pll
+    name: Phase-Locked Loop (PLL)
+    level: beginner
+    prerequisites:
+      - signal_processing
+
+  - id: control_theory
+    name: Control Theory
+    level: advanced
+    prerequisites: []
+
+  - id: linear_algebra
+    name: Linear Algebra
+    level: intermediate
+    prerequisites: []
+
+  - id: probability
+    name: Probability and Random Processes
+    level: intermediate
+    prerequisites: []
+
+  - id: state_space_model
+    name: State-Space Models
+    level: intermediate
+    prerequisites:
+      - linear_algebra
+      - control_theory
+
+  - id: quaternion_math
+    name: Quaternion Mathematics
+    level: beginner
+    prerequisites:
+      - linear_algebra
+
+  - id: optimal_control
+    name: Optimal Control
+    level: advanced
+    prerequisites:
+      - control_theory
+      - linear_algebra
+
+  - id: signal_processing
+    name: Signal Processing Basics
+    level: intermediate
+    prerequisites:
+      - linear_algebra
+
+skills:
+  - id: implement_foc_hc32f460
+    name: Implement FOC on HC32F460
+    requires:
+      - foc
+      - motor_control_fundamentals
+      - hc32f460_platform
+
+  - id: tune_pid_controllers
+    name: Tune PID Controllers
+    requires:
+      - pid_control
+      - control_theory
+
+  - id: implement_kalman_filter_c
+    name: Implement Kalman Filter in C
+    requires:
+      - kalman_filter
+      - hc32f460_platform
+      - numerical_stability
+
+  - id: implement_sensor_fusion
+    name: Implement Sensor Fusion Algorithm
+    requires:
+      - imu_sensor_fusion
+      - kalman_filter
+      - quaternion_math
+
+  - id: design_lqr_controller
+    name: Design LQR Controller
+    requires:
+      - lqr_control
+      - state_space_model
+
+  - id: implement_pll
+    name: Implement Phase-Locked Loop
+    requires:
+      - pll
+      - signal_processing
+
+  - id: hc32f460_platform
+    name: HC32F460 MCU Platform
+    requires: []
+
+  - id: numerical_stability
+    name: Numerical Stability
+    requires:
+      - linear_algebra
+
+projects:
+  - id: motor_control_platform_project
+    name: Motor Control Platform on HC32F460
+    requires:
+      - implement_foc_hc32f460
+      - tune_pid_controllers
+      - implement_kalman_filter_c
+
+  - id: gimbal_control_algorithm_project
+    name: Gimbal Control Algorithm Implementation
+    requires:
+      - implement_sensor_fusion
+      - design_lqr_controller
+
+memory:
+  - id: motor_model
+    name: Motor Model
+
+  - id: hall_linearization
+    name: Hall Linearization
+
+  - id: build_environment
+    name: Build Environment
