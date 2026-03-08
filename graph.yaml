@@ -1,6 +1,5 @@
 goals:
-  - master advanced motor control and estimation
-  - optimize gimbal control algorithms using optimal control
+  - master advanced motor control and estimation, and Gimbal control algorithms, with a focus on practical implementation on the HC32F460 platform
   - integrate AI agents effectively into development workflow
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
