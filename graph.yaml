@@ -2,6 +2,7 @@ goals:
   - master advanced motor control and estimation
   - optimize gimbal control algorithms using optimal control
   - integrate AI agents effectively into development workflow
+  - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
 topics:
   - id: motor_control_fundamentals
