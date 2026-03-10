@@ -3,6 +3,13 @@ goals:
   - integrate AI agents effectively into development workflow
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
+metadata:
+  last_reviewed: 2026-03-10
+  review_notes:
+    - checked dependency links between topics, skills and projects
+    - aligned plan deliverable filename with actual file in plan/
+    - scheduled weekly complement update workflow
+
 topics:
   # Existing topics
   - id: motor_control_fundamentals
