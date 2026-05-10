@@ -27,6 +27,10 @@ structure:
 
 RANSAC is a robust estimation method that repeatedly samples minimal subsets, fits a model, and keeps the model with the highest inlier support under a residual threshold.
 
+## Algorithm workflow
+
+![RANSAC algorithm workflow](../algorithm_workflow/ransac_workflow.svg)
+
 ## MATLAB demo goals
 
 - Generate synthetic data with inliers and outliers.

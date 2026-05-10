@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 980" role="img" aria-labelledby="ransac-title ransac-desc">
+  <title id="ransac-title">RANSAC algorithm workflow</title>
+  <desc id="ransac-desc">Workflow diagram showing RANSAC inputs, initialization, random sampling, model fitting, residual evaluation, consensus set construction, best model update, loop iteration, optional refit, and final output.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#263244" />
+    </marker>
+    <marker id="loop-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#6d28d9" />
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; }
+      .canvas { fill: #ffffff; stroke: #d9dee8; stroke-width: 2; rx: 22; }
+      .section { fill: #fafafa; stroke: #e2e8f0; stroke-width: 1.5; rx: 16; }
+      .box { stroke-width: 2.2; rx: 12; }
+      .input { fill: #eff6ff; stroke: #2563eb; }
+      .loop { fill: #f5f3ff; stroke: #7c3aed; }
+      .step { fill: #edf6ff; stroke: #2563eb; }
+      .decision { fill: #fff7ed; stroke: #f97316; }
+      .post { fill: #f0fdf4; stroke: #16a34a; }
+      .title { font-size: 18px; font-weight: 700; fill: #111827; }
+      .sub { font-size: 13px; fill: #374151; }
+      .code { font-family: Consolas, monospace; font-size: 12.5px; fill: #1f2937; }
+      .caption { font-size: 13px; font-weight: 700; fill: #4c1d95; }
+      .arrow { stroke: #263244; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .loopArrow { stroke: #6d28d9; stroke-width: 2.4; fill: none; marker-end: url(#loop-arrow); }
+      .mutedLine { stroke: #94a3b8; stroke-width: 1.5; fill: none; stroke-dasharray: 5 5; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="40" y="35" width="900" height="910" />
+
+  <rect class="box input" x="280" y="70" width="420" height="82" />
+  <text class="title" x="490" y="101" text-anchor="middle">Input</text>
+  <text class="code" x="490" y="128" text-anchor="middle">D = {x_i}_{i=1}^n, s, tau, N</text>
+
+  <path class="arrow" d="M490 152 L490 190" />
+
+  <rect class="box input" x="280" y="190" width="420" height="86" />
+  <text class="title" x="490" y="222" text-anchor="middle">Initialize</text>
+  <text class="code" x="490" y="249" text-anchor="middle">best_inlier_count = 0</text>
+  <text class="code" x="490" y="268" text-anchor="middle">best_model = None</text>
+
+  <path class="arrow" d="M490 276 L490 314" />
+
+  <rect class="box loop" x="280" y="314" width="420" height="76" />
+  <text class="title" x="490" y="344" text-anchor="middle">Loop k = 1 to N</text>
+  <text class="sub" x="490" y="369" text-anchor="middle">Evaluate one random model hypothesis</text>
+
+  <rect class="section" x="82" y="425" width="816" height="315" />
+  <text class="caption" x="112" y="455">Inside each iteration</text>
+
+  <path class="arrow" d="M490 390 L490 426" />
+  <path class="arrow" d="M490 426 L200 426 L200 490" />
+
+  <rect class="box step" x="105" y="490" width="190" height="74" />
+  <text class="title" x="200" y="520" text-anchor="middle">1. Sample</text>
+  <text class="sub" x="200" y="545" text-anchor="middle">Pick s random points</text>
+
+  <path class="arrow" d="M295 527 L350 527" />
+
+  <rect class="box step" x="350" y="490" width="190" height="74" />
+  <text class="title" x="445" y="520" text-anchor="middle">2. Fit model</text>
+  <text class="code" x="445" y="545" text-anchor="middle">theta_k from sample</text>
+
+  <path class="arrow" d="M540 527 L595 527" />
+
+  <rect class="box step" x="595" y="490" width="240" height="74" />
+  <text class="title" x="715" y="520" text-anchor="middle">3. Residuals</text>
+  <text class="code" x="715" y="545" text-anchor="middle">r_i(theta_k) for every x_i</text>
+
+  <path class="arrow" d="M715 564 L715 610 L600 610" />
+
+  <rect class="box step" x="360" y="575" width="240" height="74" />
+  <text class="title" x="480" y="605" text-anchor="middle">4. Consensus set</text>
+  <text class="code" x="480" y="630" text-anchor="middle">I_k = {i | r_i(theta_k) &lt; tau}</text>
+
+  <path class="arrow" d="M360 612 L285 612" />
+
+  <path class="decision" d="M190 570 L285 612 L190 654 L95 612 Z" />
+  <text class="title" x="190" y="606" text-anchor="middle">5. Better?</text>
+  <text class="code" x="190" y="628" text-anchor="middle">|I_k| &gt; best</text>
+
+  <path class="arrow" d="M190 654 L190 690 L360 690" />
+  <text class="sub" x="238" y="681" text-anchor="middle">Yes</text>
+
+  <rect class="box step" x="360" y="655" width="245" height="74" />
+  <text class="title" x="482" y="683" text-anchor="middle">Update best</text>
+  <text class="code" x="482" y="707" text-anchor="middle">best_inlier_count = |I_k|</text>
+  <text class="code" x="482" y="724" text-anchor="middle">best_model = theta_k</text>
+
+  <path class="loopArrow" d="M605 692 L858 692 L858 352 L700 352" />
+  <text class="caption" x="805" y="681" text-anchor="middle">Next k</text>
+
+  <path class="loopArrow" d="M95 612 L70 612 L70 352 L280 352" />
+  <text class="sub" x="112" y="597" text-anchor="middle">No</text>
+
+  <path class="mutedLine" d="M700 352 L858 352" />
+
+  <path class="arrow" d="M490 740 L490 785" />
+  <text class="sub" x="535" y="769">after N iterations</text>
+
+  <rect class="box post" x="320" y="785" width="340" height="76" />
+  <text class="title" x="490" y="815" text-anchor="middle">Optional refit</text>
+  <text class="sub" x="490" y="840" text-anchor="middle">Refit theta* using all best inliers</text>
+
+  <path class="arrow" d="M490 861 L490 895" />
+
+  <rect class="box post" x="320" y="895" width="340" height="60" />
+  <text class="title" x="490" y="932" text-anchor="middle">Output best model theta*</text>
+</svg>
