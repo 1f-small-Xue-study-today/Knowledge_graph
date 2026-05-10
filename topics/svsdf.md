@@ -28,4 +28,4 @@ Computing SVSDFs involves discretizing time and space and integrating the robot'
 
 ## Learning Update (2026-05-10)
 
-- Euclidean Signed Distance Field (ESDF) concepts have been learned and can be applied for distance queries and collision-cost shaping.
+- SVSDF modeling and distance-evaluation concepts have been learned for continuous collision checking and trajectory-cost shaping.

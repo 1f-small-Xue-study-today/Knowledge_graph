@@ -6,7 +6,7 @@ goals:
 metadata:
   last_reviewed: 2026-05-10
   review_notes:
-    - updated learned statuses for ESDF/SVSDF, LADRC, and gimbal disturbance rejection
+    - updated learned statuses for SVSDF, LADRC, and gimbal disturbance rejection
     - removed outdated March-April 2026 plan file after completion
     - retained MATLAB demo structure and optimization-method extensions
 
