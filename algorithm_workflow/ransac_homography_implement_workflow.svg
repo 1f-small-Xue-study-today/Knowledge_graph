@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 860" role="img" aria-labelledby="title desc">
+  <title id="title">RANSAC homography implementation workflow</title>
+  <desc id="desc">Workflow for the MATLAB homography implementation: load images, detect and match SIFT features, build point map, run custom RANSAC with DLT and SVD, refine with inliers, and generate visual outputs including a stitched image.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#263244" />
+    </marker>
+    <marker id="loopArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7c3aed" />
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; }
+      .canvas { fill: #ffffff; stroke: #d9dee8; stroke-width: 2; }
+      .band { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; }
+      .box { stroke-width: 2; }
+      .input { fill: #eff6ff; stroke: #2563eb; }
+      .match { fill: #ecfeff; stroke: #0891b2; }
+      .ransac { fill: #f5f3ff; stroke: #7c3aed; }
+      .decision { fill: #fff7ed; stroke: #f97316; }
+      .output { fill: #f0fdf4; stroke: #16a34a; }
+      .title { font-size: 18px; font-weight: 700; fill: #111827; }
+      .heading { font-size: 15px; font-weight: 700; fill: #334155; }
+      .text { font-size: 13px; fill: #334155; }
+      .code { font-family: Consolas, monospace; font-size: 12px; fill: #1f2937; }
+      .small { font-size: 11.5px; fill: #475569; }
+      .arrow { stroke: #263244; stroke-width: 2.3; fill: none; marker-end: url(#arrow); }
+      .loop { stroke: #7c3aed; stroke-width: 2.3; fill: none; marker-end: url(#loopArrow); }
+      .note { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="30" y="25" width="1060" height="810" rx="22" />
+  <text class="title" x="560" y="63" text-anchor="middle">MATLAB RANSAC Homography Implementation</text>
+  <text class="text" x="560" y="88" text-anchor="middle">demo/ransac/homography_implement</text>
+
+  <rect class="band" x="65" y="118" width="990" height="118" rx="16" />
+  <text class="heading" x="90" y="148">1. Input and feature matching in scripts/main.m</text>
+
+  <rect class="box input" x="90" y="168" width="180" height="48" rx="10" />
+  <text class="code" x="180" y="188" text-anchor="middle">data/1.png</text>
+  <text class="code" x="180" y="205" text-anchor="middle">data/2.png</text>
+
+  <path class="arrow" d="M270 192 L315 192" />
+
+  <rect class="box input" x="315" y="168" width="170" height="48" rx="10" />
+  <text class="code" x="400" y="188" text-anchor="middle">toGray()</text>
+  <text class="small" x="400" y="205" text-anchor="middle">grayscale images</text>
+
+  <path class="arrow" d="M485 192 L530 192" />
+
+  <rect class="box match" x="530" y="168" width="205" height="48" rx="10" />
+  <text class="code" x="632" y="188" text-anchor="middle">detectSIFTFeatures()</text>
+  <text class="small" x="632" y="205" text-anchor="middle">keypoints in both images</text>
+
+  <path class="arrow" d="M735 192 L780 192" />
+
+  <rect class="box match" x="780" y="168" width="230" height="48" rx="10" />
+  <text class="code" x="895" y="188" text-anchor="middle">extractFeatures()</text>
+  <text class="code" x="895" y="205" text-anchor="middle">matchFeatures()</text>
+
+  <path class="arrow" d="M560 236 L560 276" />
+
+  <rect class="box match" x="365" y="276" width="390" height="58" rx="10" />
+  <text class="heading" x="560" y="299" text-anchor="middle">Point map</text>
+  <text class="code" x="560" y="320" text-anchor="middle">[x1, y1, x2, y2] for every matched point pair</text>
+
+  <path class="arrow" d="M560 334 L560 374" />
+
+  <rect class="band" x="65" y="374" width="990" height="300" rx="16" />
+  <text class="heading" x="90" y="404">2. Robust homography search in functions/ransacHomography.m</text>
+
+  <rect class="box ransac" x="95" y="434" width="190" height="58" rx="10" />
+  <text class="heading" x="190" y="457" text-anchor="middle">Initialize</text>
+  <text class="code" x="190" y="478" text-anchor="middle">bestH, bestInliers</text>
+
+  <path class="arrow" d="M285 463 L330 463" />
+
+  <rect class="box ransac" x="330" y="434" width="180" height="58" rx="10" />
+  <text class="heading" x="420" y="457" text-anchor="middle">Random sample</text>
+  <text class="code" x="420" y="478" text-anchor="middle">randperm(N, 4)</text>
+
+  <path class="arrow" d="M510 463 L555 463" />
+
+  <rect class="box ransac" x="555" y="434" width="220" height="58" rx="10" />
+  <text class="heading" x="665" y="457" text-anchor="middle">Fit candidate H</text>
+  <text class="code" x="665" y="478" text-anchor="middle">computeHomographyDLT()</text>
+
+  <path class="arrow" d="M775 463 L820 463" />
+
+  <rect class="box ransac" x="820" y="434" width="200" height="58" rx="10" />
+  <text class="heading" x="920" y="457" text-anchor="middle">Score all matches</text>
+  <text class="code" x="920" y="478" text-anchor="middle">reprojectionErrors()</text>
+
+  <path class="arrow" d="M920 492 L920 532 L780 532" />
+
+  <rect class="box decision" x="580" y="504" width="200" height="58" rx="10" />
+  <text class="heading" x="680" y="527" text-anchor="middle">Build consensus</text>
+  <text class="code" x="680" y="548" text-anchor="middle">error &lt; threshold</text>
+
+  <path class="arrow" d="M580 533 L525 533" />
+
+  <rect class="box decision" x="325" y="504" width="200" height="58" rx="10" />
+  <text class="heading" x="425" y="527" text-anchor="middle">Update best</text>
+  <text class="code" x="425" y="548" text-anchor="middle">if more inliers</text>
+
+  <path class="loop" d="M425 504 L425 397 L420 397 L420 434" />
+  <text class="small" x="485" y="398" text-anchor="middle">repeat up to MaxNumTrials or stop ratio</text>
+
+  <rect class="note" x="115" y="590" width="370" height="58" rx="10" />
+  <text class="heading" x="300" y="613" text-anchor="middle">DLT/SVD inside computeHomographyDLT</text>
+  <text class="code" x="300" y="634" text-anchor="middle">build A from pairs, solve A*h = 0, reshape h to 3x3 H</text>
+
+  <path class="arrow" d="M525 533 L560 612 L595 612" />
+
+  <rect class="box output" x="595" y="590" width="360" height="58" rx="10" />
+  <text class="heading" x="775" y="613" text-anchor="middle">Refit final H with all inliers</text>
+  <text class="code" x="775" y="634" text-anchor="middle">computeHomographyDLT(pointMap(inlierMask,:))</text>
+
+  <path class="arrow" d="M775 648 L775 704" />
+
+  <rect class="band" x="65" y="704" width="990" height="90" rx="16" />
+  <text class="heading" x="90" y="734">3. Outputs from scripts/main.m</text>
+
+  <rect class="box output" x="95" y="750" width="185" height="34" rx="9" />
+  <text class="code" x="188" y="772" text-anchor="middle">point_map.csv</text>
+
+  <rect class="box output" x="305" y="750" width="215" height="34" rx="9" />
+  <text class="code" x="412" y="772" text-anchor="middle">matches.png</text>
+
+  <rect class="box output" x="545" y="750" width="215" height="34" rx="9" />
+  <text class="code" x="652" y="772" text-anchor="middle">inlier_matches.png</text>
+
+  <rect class="box output" x="785" y="750" width="220" height="34" rx="9" />
+  <text class="code" x="895" y="772" text-anchor="middle">stitched.png + info.txt</text>
+
+  <text class="small" x="560" y="820" text-anchor="middle">The final homography maps image 1 coordinates into image 2 coordinates; stitching warps image 1 and blends it with image 2.</text>
+</svg>

@@ -35,11 +35,23 @@ RANSAC is a robust estimation method that repeatedly samples minimal subsets, fi
 
 ![RANSAC algorithm workflow](../algorithm_workflow/ransac_workflow.svg)
 
+## Homography implementation workflow
+
+![RANSAC homography implementation workflow](../algorithm_workflow/ransac_homography_implement_workflow.svg)
+
+## Implementation status
+
+- Updated `demo/ransac/homography_implement/` with a MATLAB implementation.
+- Added `functions/ransacHomography.m` as the reusable RANSAC package function.
+- Added `scripts/main.m` as the main script with local helper functions for image loading, feature matching, match visualization, inlier visualization, and image stitching.
+- Added `scripts/run_homography_implement_demo.m` as the runnable entry point.
+- The homography demo now writes `point_map.csv`, keypoint/match figures, `inlier_matches.png`, `stitched.png`, and `info.txt` to `figures/<timestamp>/`.
+
 ## MATLAB demo goals
 
 - Build two MATLAB demos for RANSAC:
   - `demo/ransac/modal_fit_sweep/`: modal-fit demo for sweep data, using user-provided code.
-  - `demo/ransac/homography_implement/`: homography re-implementation demo in MATLAB.
+  - `demo/ransac/homography_implement/`: homography re-implementation demo in MATLAB. Implemented on 2026-05-10.
 - For the modal-fit demo, estimate candidate modal parameters from minimal random samples.
 - For the homography demo, estimate candidate projective transforms from minimal point correspondences.
 - Use residual thresholding to build robust consensus sets in both demos.
