@@ -1,0 +1,14 @@
+Homography maps image 1 coordinates into image 2 coordinates.
+
+H =
+0.941165014607 -0.07110542593 291.402897036
+-0.0651729607342 0.976280759954 74.0001589371
+-4.28434156041e-05 1.89596771271e-05 1
+
+Num matches: 113
+Num inliers: 29
+Inlier ratio: 0.256637
+RANSAC trials: 1000
+Reprojection threshold: 12.000000 pixels
+Mean inlier error: 4.225308 pixels
+Median inlier error: 3.597936 pixels
