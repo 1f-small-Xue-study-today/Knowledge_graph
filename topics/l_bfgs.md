@@ -34,3 +34,4 @@ L-BFGS is a quasi-Newton optimization method that approximates the inverse Hessi
 - Optimize a nonlinear objective (e.g., Rosenbrock).
 - Compare convergence vs gradient descent.
 - Plot objective and gradient-norm over iterations.
+- Track L-BFGS continuation work in `plan/2026/short_term/2026-W19.md`.

@@ -33,7 +33,8 @@ RANSAC is a robust estimation method that repeatedly samples minimal subsets, fi
 
 ## MATLAB demo goals
 
-- Generate synthetic data with inliers and outliers.
-- Fit a line (or plane) using RANSAC.
-- Compare robust fit vs least-squares fit.
-- Plot inlier mask and residual distribution.
+- Build a modal-fit algorithm demo with user-provided MATLAB code.
+- Estimate candidate modal parameters from minimal random samples.
+- Use residual thresholding to build a robust consensus set.
+- Refit the final modal model using all inliers from the best hypothesis.
+- Track this as a this-week plan item in `plan/2026/short_term/2026-W19.md`.

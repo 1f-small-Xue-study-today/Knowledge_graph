@@ -9,6 +9,7 @@ metadata:
     - updated learned statuses for SVSDF, LADRC, and gimbal disturbance rejection
     - removed outdated March-April 2026 plan file after completion
     - retained MATLAB demo structure and optimization-method extensions
+    - restored plan folder as a permanent home for short-term and long-term plans
 
 topics:
   # Existing topics
