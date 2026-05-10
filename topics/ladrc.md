@@ -3,7 +3,7 @@ id: ladrc
 type: topic
 name: Linear Active Disturbance Rejection Control
 level: intermediate
-status: unstudied
+status: learned
 prerequisites:
   - control_theory
   - state_space_model
@@ -12,7 +12,7 @@ related:
   - eso
   - pid_control
   - gimbal_disturbance_rejection
-last_updated: 2026-03-08
+last_updated: 2026-05-10
 ---
 
 # Linear Active Disturbance Rejection Control (LADRC)
@@ -30,3 +30,7 @@ LADRC is a robust control strategy that estimates and compensates for unknown di
 ## Applications
 
 LADRC is widely used in motor control and gimbal systems because it can reject load disturbances, friction and cogging torque without precise modeling.
+
+## Learning Update (2026-05-10)
+
+- LADRC has been learned and exercised via an existing control library.

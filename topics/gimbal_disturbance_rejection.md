@@ -3,14 +3,14 @@ id: gimbal_disturbance_rejection
 type: topic
 name: Gimbal Disturbance Rejection
 level: intermediate
-status: unstudied
+status: learned
 prerequisites:
   - ladrc
   - eso
   - pmsm_model
 related:
   - gimbal_control_algorithm_project
-last_updated: 2026-03-08
+last_updated: 2026-05-10
 ---
 
 # Gimbal Disturbance Rejection
@@ -26,3 +26,7 @@ Camera gimbals are subject to disturbances such as vibration, wind gusts and cou
 - Decouple axes dynamics through feedforward and dynamic compensation.
 
 Careful tuning ensures fast disturbance rejection without amplifying sensor noise.
+
+## Learning Update (2026-05-10)
+
+- Gimbal dynamics and disturbance rejection concepts have been learned.
