@@ -15,10 +15,14 @@ structure:
   language: matlab
   demo_root: demo/ransac
   folders:
-    - scripts
-    - functions
-    - data
-    - figures
+    - modal_fit_sweep/scripts
+    - modal_fit_sweep/functions
+    - modal_fit_sweep/data
+    - modal_fit_sweep/figures
+    - homography_implement/scripts
+    - homography_implement/functions
+    - homography_implement/data
+    - homography_implement/figures
 ---
 
 # RANSAC (Random Sample Consensus)
@@ -33,8 +37,11 @@ RANSAC is a robust estimation method that repeatedly samples minimal subsets, fi
 
 ## MATLAB demo goals
 
-- Build a modal-fit algorithm demo with user-provided MATLAB code.
-- Estimate candidate modal parameters from minimal random samples.
-- Use residual thresholding to build a robust consensus set.
-- Refit the final modal model using all inliers from the best hypothesis.
-- Track this as a this-week plan item in `plan/2026/short_term/2026-W19.md`.
+- Build two MATLAB demos for RANSAC:
+  - `demo/ransac/modal_fit_sweep/`: modal-fit demo for sweep data, using user-provided code.
+  - `demo/ransac/homography_implement/`: homography re-implementation demo in MATLAB.
+- For the modal-fit demo, estimate candidate modal parameters from minimal random samples.
+- For the homography demo, estimate candidate projective transforms from minimal point correspondences.
+- Use residual thresholding to build robust consensus sets in both demos.
+- Refit the final model using all inliers from the best hypothesis.
+- Track both demos as this-week plan items in `plan/2026/short_term/2026-W19.md`.

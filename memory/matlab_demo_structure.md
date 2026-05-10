@@ -9,6 +9,13 @@ For each MATLAB concept demo, use:
 - `demo/<topic>/data/` for generated or source datasets.
 - `demo/<topic>/figures/` for exported plots and result images.
 
+If one topic has multiple demo variants, use:
+
+- `demo/<topic>/<variant>/scripts/`
+- `demo/<topic>/<variant>/functions/`
+- `demo/<topic>/<variant>/data/`
+- `demo/<topic>/<variant>/figures/`
+
 ## Naming and workflow
 
 - Main entry script: `run_<topic>_demo.m`.

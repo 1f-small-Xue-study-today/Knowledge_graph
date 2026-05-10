@@ -49,6 +49,16 @@ demo/<topic>/
   figures/
 ```
 
+For topics with multiple demo variants, nest the same structure one level deeper:
+
+```text
+demo/<topic>/<variant>/
+  scripts/
+  functions/
+  data/
+  figures/
+```
+
 Keep source code in `scripts/` and `functions/`. Use `.gitkeep` for empty `data/` or `figures/` folders. Avoid committing generated plots unless they are intentionally part of a result record.
 
 ### `algorithm_workflow/`
