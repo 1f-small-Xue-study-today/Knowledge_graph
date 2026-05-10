@@ -14,7 +14,7 @@ related:
 last_updated: 2026-05-10
 structure:
   language: matlab
-  demo_root: demos/l_bfgs
+  demo_root: demo/l_bfgs
   folders:
     - scripts
     - functions

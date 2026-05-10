@@ -4,10 +4,10 @@
 
 For each MATLAB concept demo, use:
 
-- `demos/<topic>/scripts/` for runnable experiment scripts.
-- `demos/<topic>/functions/` for reusable helper functions.
-- `demos/<topic>/data/` for generated or source datasets.
-- `demos/<topic>/figures/` for exported plots and result images.
+- `demo/<topic>/scripts/` for runnable experiment scripts.
+- `demo/<topic>/functions/` for reusable helper functions.
+- `demo/<topic>/data/` for generated or source datasets.
+- `demo/<topic>/figures/` for exported plots and result images.
 
 ## Naming and workflow
 

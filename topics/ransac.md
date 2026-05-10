@@ -13,7 +13,7 @@ related:
 last_updated: 2026-05-10
 structure:
   language: matlab
-  demo_root: demos/ransac
+  demo_root: demo/ransac
   folders:
     - scripts
     - functions
