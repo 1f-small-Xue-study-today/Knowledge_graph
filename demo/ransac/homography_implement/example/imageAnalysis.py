@@ -36,12 +36,14 @@ def computeHomography(pairs):
         A.append([x1, y1, 1, 0, 0, 0, -x2 * x1, -x2 * y1, -x2])
         A.append([0, 0, 0, x1, y1, 1, -y2 * x1, -y2 * y1, -y2])
     A = np.array(A)
-
+    # A = U S V^T , the V is V^T in the lecture slides. We want the last column of V, which is the
     # Singular Value Decomposition (SVD)
     U, S, V = np.linalg.svd(A)
 
+    # A^T A = V S^T S V^T
     # V has shape (9, 9) for any number of input pairs. V[-1] is the eigenvector
     # of (A^T)A with the smalles eigenvalue. Reshape into 3x3 matrix.
+
     H = np.reshape(V[-1], (3, 3))
 
     # Normalization
