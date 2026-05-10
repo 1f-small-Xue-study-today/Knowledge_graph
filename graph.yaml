@@ -3,6 +3,13 @@ goals:
   - integrate AI agents effectively into development workflow
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
+metadata:
+  last_reviewed: 2026-05-10
+  review_notes:
+    - updated learned statuses for ESDF/SVSDF, LADRC, and gimbal disturbance rejection
+    - removed outdated March-April 2026 plan file after completion
+    - retained MATLAB demo structure and optimization-method extensions
+
 topics:
   # Existing topics
   - id: motor_control_fundamentals
@@ -178,6 +185,19 @@ topics:
     prerequisites:
       - kinodynamic_planning
       - svsdf
+  - id: ransac
+    name: RANSAC (Random Sample Consensus)
+    level: intermediate
+    prerequisites:
+      - probability
+      - linear_algebra
+  - id: l_bfgs
+    name: Limited-memory BFGS (L-BFGS)
+    level: intermediate
+    prerequisites:
+      - optimal_control
+      - linear_algebra
+      - state_space_model
 
 skills:
   # Existing skills
@@ -300,6 +320,18 @@ skills:
     requires:
       - polynomial_optimization
       - optimal_control
+  - id: implement_ransac_demo_matlab
+    name: Implement RANSAC Demo in MATLAB
+    requires:
+      - ransac
+      - linear_algebra
+      - probability
+  - id: implement_l_bfgs_demo_matlab
+    name: Implement L-BFGS Demo in MATLAB
+    requires:
+      - l_bfgs
+      - optimal_control
+      - linear_algebra
 
 projects:
   # Existing projects
@@ -340,6 +372,11 @@ projects:
       - implement_kinodynamic_planner
       - implement_continuous_collision_avoidance
       - implement_svsdf
+  - id: optimization_methods_project
+    name: Optimization Methods Study Project
+    requires:
+      - implement_ransac_demo_matlab
+      - implement_l_bfgs_demo_matlab
 
 memory:
   - id: motor_model
@@ -348,3 +385,5 @@ memory:
     name: Hall Linearization
   - id: build_environment
     name: Build Environment
+  - id: matlab_demo_structure
+    name: MATLAB Demo Structure
