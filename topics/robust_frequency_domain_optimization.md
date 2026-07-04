@@ -9,9 +9,11 @@ prerequisites:
   - frf_analysis
   - pmsm_model
   - optimal_control
+  - numerical_optimization
 related:
   - foc
   - ladrc
+  - numerical_optimization
   - advanced_motor_control_project
 last_updated: 2026-07-04
 ---

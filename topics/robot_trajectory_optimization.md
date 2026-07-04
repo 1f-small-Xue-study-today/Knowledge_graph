@@ -9,6 +9,7 @@ prerequisites:
   - linear_algebra
   - state_space_model
 related:
+  - numerical_optimization
   - kinodynamic_planning
   - polynomial_optimization
   - implicit_svsdf_planner_front_end

@@ -6,6 +6,7 @@ goals:
 metadata:
   last_reviewed: 2026-07-04
   review_notes:
+    - added starter numerical optimization topic and basic optimization skill
     - added Fusion 360 UAV mechanical and aerodynamic design capability
     - expanded modal identification knowledge and added robotics kinematics/dynamics capability
     - added future DOB/LADRC observer weekly plan and motor/gimbal failure-analysis skills
@@ -86,6 +87,12 @@ topics:
     prerequisites:
       - control_theory
       - linear_algebra
+  - id: numerical_optimization
+    name: Numerical Optimization
+    level: beginner
+    prerequisites:
+      - linear_algebra
+      - probability
   - id: signal_processing
     name: Signal Processing Basics
     level: intermediate
@@ -156,6 +163,7 @@ topics:
       - frf_analysis
       - pmsm_model
       - optimal_control
+      - numerical_optimization
   - id: modal_identification
     name: Modal Identification
     level: advanced
@@ -198,6 +206,7 @@ topics:
     name: Polynomial Trajectory Optimization
     level: intermediate
     prerequisites:
+      - numerical_optimization
       - optimal_control
       - linear_algebra
   - id: svsdf
@@ -230,6 +239,7 @@ topics:
     name: Limited-memory BFGS (L-BFGS)
     level: intermediate
     prerequisites:
+      - numerical_optimization
       - optimal_control
       - linear_algebra
       - state_space_model
@@ -320,6 +330,7 @@ skills:
     name: Design Robust Frequency-Domain Controller
     requires:
       - robust_frequency_domain_optimization
+      - numerical_optimization
       - frf_analysis
       - pmsm_model
       - optimal_control
@@ -357,6 +368,12 @@ skills:
       - robot_trajectory_optimization
       - polynomial_optimization
       - state_space_model
+  - id: apply_numerical_optimization_basics
+    name: Apply Numerical Optimization Basics
+    requires:
+      - numerical_optimization
+      - linear_algebra
+      - numerical_stability
   - id: apply_robotics_kinematics_dynamics
     name: Apply Robotics Kinematics and Dynamics
     requires:
@@ -397,6 +414,7 @@ skills:
     name: Implement Polynomial Trajectory Optimizer
     requires:
       - polynomial_optimization
+      - numerical_optimization
       - optimal_control
   - id: implement_ransac_demo_matlab
     name: Implement RANSAC Demo in MATLAB
@@ -408,6 +426,7 @@ skills:
     name: Implement L-BFGS Demo in MATLAB
     requires:
       - l_bfgs
+      - numerical_optimization
       - optimal_control
       - linear_algebra
 
@@ -456,6 +475,7 @@ projects:
   - id: optimization_methods_project
     name: Optimization Methods Study Project
     requires:
+      - apply_numerical_optimization_basics
       - implement_ransac_demo_matlab
       - implement_l_bfgs_demo_matlab
 

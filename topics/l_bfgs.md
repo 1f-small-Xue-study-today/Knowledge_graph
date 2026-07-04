@@ -5,13 +5,14 @@ name: Limited-memory BFGS (L-BFGS)
 level: intermediate
 status: unstudied
 prerequisites:
-  - optimal_control
+  - numerical_optimization
   - linear_algebra
   - state_space_model
 related:
+  - numerical_optimization
   - polynomial_optimization
   - robot_trajectory_optimization
-last_updated: 2026-05-10
+last_updated: 2026-07-04
 structure:
   language: matlab
   demo_root: demo/l_bfgs
@@ -27,6 +28,10 @@ structure:
 ## Overview
 
 L-BFGS is a quasi-Newton optimization method that approximates the inverse Hessian with a limited history of gradient/step vectors, enabling memory-efficient optimization for medium and large parameter problems.
+
+## Learning Update (2026-07-04)
+
+- L-BFGS is now tracked as a follow-on method after starting the numerical optimization foundation.
 
 ## MATLAB demo goals
 

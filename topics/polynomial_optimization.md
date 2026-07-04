@@ -5,11 +5,13 @@ name: Polynomial Trajectory Optimization
 level: intermediate
 status: unstudied
 prerequisites:
+  - numerical_optimization
   - optimal_control
   - linear_algebra
 related:
   - robot_trajectory_optimization
-last_updated: 2026-03-08
+  - numerical_optimization
+last_updated: 2026-07-04
 ---
 
 # Polynomial Trajectory Optimization
