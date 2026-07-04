@@ -1,0 +1,243 @@
+%-------------------------
+% Resume in Latex
+% Author : Gennadii Chursov
+% Based off of: https://github.com/sb2nov/resume and https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont{Microsoft YaHei}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable when supported
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape 薛瑞泽} \\ \vspace{1pt}
+    \small \textit{机器人 / 控制算法 / 自动化工程师} \\
+    \href{mailto:xrz836884211@gmail.com}{\underline{xrz836884211@gmail.com}} $|$
+    18640745980 $|$
+    深圳
+\end{center}
+
+%-----------TARGET TITLE-----------
+\section{求职意向}
+\small{自动化工程师 / 机器人控制算法工程师 / 嵌入式算法工程师}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{个人优势}
+\small{
+具备机器人控制、嵌入式电机验证、软硬件联调和自动化测试系统建设经验。当前在 Insta360 负责云台控制算法相关工作，覆盖电机测试标准、系统辨识、MCU 端机器学习诊断、失效分析、自动化验证 Agent 和鲁棒控制器设计。工程上能够从问题定位、算法设计、数据采集、实验验证到产品化闭环推进；研究上具备移动机械臂规划、避障和 Tailsitter 无人机控制经验。
+}
+
+%-----------CORE TECHNICAL SKILLS-----------
+\section{核心技能}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{控制与机器人}{: 电机控制、PID/LQR/MPC、LADRC/ESO、云台传感器融合、轨迹生成、机械臂运动学} \\
+     \textbf{测试与验证}{: 电机/云台测试方案、系统辨识、FRF 分析、模态识别、信号采集、失效分析、数据报告自动化} \\
+     \textbf{软件与工具}{: Python、C++、C、MATLAB/Simulink、Git、Linux、Lark CLI、Jira} \\
+     \textbf{嵌入式与硬件}{: MCU、ADC/DMA、PWM、电机驱动、传感器、GDB-JLink、UART、示波器、数字电源、数据采集} \\
+     \textbf{规划与 AI}{: A*、RRT*、碰撞检测、路径规划、机器学习模型部署} \\
+     \textbf{工程设计}{: Fusion 360、SolidWorks、3D 打印}
+    }}
+ \end{itemize}
+
+%-----------WORK EXPERIENCE-----------
+\section{工作经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {云台控制算法工程师}{2024.07 -- 至今}
+      {Insta360}{深圳}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{云台电机测试体系 0 到 1 建设}} \\
+        \small{面向云台电机量产与供应商验证，设计基于系统辨识的测试方法，定量评估齿槽转矩、摩擦、相电阻、电感和 Hall 传感器健康状态；搭建服务端采集、分析和报告流程，提升供应商验证、失效分析和电机设计决策效率。}}
+        \resumeItem{\normalsize{\textbf{MCU 端 L-SVM 碰撞检测与校准方案}} \\
+        \small{针对用户使用中高动态、易碰撞导致的云台性能衰减问题，设计可部署在 MCU 上的 L-SVM 碰撞检测算法，识别可能导致电机结构变形和控制性能下降的碰撞事件；推动用户侧校准作为核心产品能力，增强产品鲁棒性。}}
+        \resumeItem{\normalsize{\textbf{电机可靠性标准与云台健康检查}} \\
+        \small{负责项目内电机可靠性测试标准建设，定义控制侧和电机侧健康检查方法；通过日志、传感器数据和实验测量定位可靠性问题，维护云台产品开发中的控制性能健康标准。}}
+        \resumeItem{\normalsize{\textbf{代码开发与 Jira 验证自动化 Agent}} \\
+        \small{设计自动化 Agent 开发 SOP，使 Agent 可通过 Lark CLI 读取需求文档，在固件仓库内实现功能，并调用自研 GDB-JLink MCP、UART CLI、数字电源 MCP 和 SoC 相关 CLI 完成特性/缺陷修复验证，自动收集证据并回写 Lark 或 Jira。}}
+        \resumeItem{\normalsize{\textbf{鲁棒频域控制器自动生成}} \\
+        \small{研究基于频域鲁棒优化的控制器自动生成方法，在简化控制器结构的同时保持接近资深控制工程师手调方案的性能；推导闭式数学解，并用 MATLAB 验证频响、稳定裕度、跟踪和抗扰指标。}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------RESEARCH EXPERIENCE-----------
+\section{研究经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {兼职研究员}{2024.12 -- 至今}
+      {移动机械臂无碰撞轨迹生成，随机形状末端负载}{RAL 投稿，第三作者}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{Hybrid A* + RRT* 前端路径采样}} \\
+        \small{构建采样式规划框架：使用基于 A* 的方法为两轮移动底盘生成路径样本，并在 6 轴机械臂关节空间中使用 RRT* 规划，在复杂障碍场景下生成无碰撞运动。}}
+        \resumeItem{\normalsize{\textbf{面向真实实验的工程实现}} \\
+        \small{使用 Python/C++/MATLAB 实现规划流程，集成机器人模型、碰撞检测、轨迹导出和实验验证指标，包括规划时间、跟踪误差、安全裕度和成功率。}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------OTHER RELATED EXPERIENCE-----------
+\section{其他经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {机器人研发实习生}{2023.12 -- 2024.06}
+      {东莞市本末科技 / DiaBot Technology}{东莞}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{轮腿机器人 + 机械臂抓取控制 Demo}} \\
+        \small{适配合作方创业公司的自研机械臂，评估轻量化替代方案；设计几何法逆运动学求解器，实现“鸡头稳定”行为，并将正/逆运动学、插值算法和级联控制移植到轮腿机器人运动控制器，去除 ROS 依赖。Demo 曾向华为及创业基地参观者展示。}}
+        \resumeItem{\normalsize{\textbf{Tita 机器人 Core-XY 换电站 Demo}} \\
+        \small{与结构工程师协作从 0 到 1 设计换电站原型机，基于 Core-XY 结构和步进电机构建 XYZ 运动控制框架，实现机器人进站后自动更换电池；参与专利 CN118559741A，目前处于实质审查阶段。}}
+        \resumeItem{\normalsize{\textbf{Tita 轮腿机器人弹跳冲击力检测}} \\
+        \small{基于高频 IMU、UDP 和 ESP32 搭建冲击数据采集设备，使用 MATLAB App Designer 开发上位机，实现 IMU 参数标定和 EKF 姿态估计；工具已交付机械组并持续内部使用。参与专利 CN118330258A，目前处于实质审查阶段。}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tailsitter 垂直起降无人机设计与控制}{2022.09 -- 2023.08}
+      {MarsLab 毕业设计}{香港大学}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{垂直起降无人机建模与控制}} \\
+        \small{推导 Tailsitter 无人机运动学和动力学模型，设计级联 PID 控制器并接入仿真器，快速验证控制逻辑和导航效果；负责动力学仿真和控制器设计，完成仿真定点导航，并支持基于 Vicon + PX4 平台的室内悬停实验。}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{教育背景}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {香港大学（HKU）}{香港}
+      {机械工程硕士，MarsLab}{2022.09 -- 2024.07}
+    \resumeSubheading
+      {匹兹堡大学}{美国匹兹堡}
+      {机械工程本科}{2021.09 -- 2022.05}
+    \resumeSubheading
+      {四川大学}{成都}
+      {机械设计制造及其自动化本科}{2018.09 -- 2021.07}
+  \resumeSubHeadingListEnd
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{相关课程}{: 机电一体化系统工程、无人机设计控制与导航、现代机器人学、机器学习与模式识别、自动控制、机器人学与控制}
+    }}
+  \end{itemize}
+
+%-----------PUBLICATIONS-----------
+\section{论文 / 专利 / 奖项}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Autonomous Tail-Sitter Flights in Unknown Environments} \\
+      \textbf{专利 CN118559741A}{: Core-XY 结构轮腿机器人换电站，实质审查阶段} \\
+      \textbf{专利 CN118330258A}{: 轮腿机器人弹跳冲击力检测工具，实质审查阶段} \\
+      \textbf{AI 能力认证奖}{: Insta360 嵌入式软件部}
+    }}
+ \end{itemize}
+
+%-----------ADDITIONAL INFORMATION-----------
+\section{其他信息}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{语言能力}{: 英语口语流利，可适应全英文工程协作环境。} \\
+      \textbf{招聘支持}{: 通过专业人脉协助团队兼职技术招聘，筛选并评估高质量候选人。} \\
+      \textbf{个人}{: 养有一只狗和一只猫。}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}
