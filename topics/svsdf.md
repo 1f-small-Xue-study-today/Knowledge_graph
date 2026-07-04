@@ -9,7 +9,8 @@ prerequisites:
   - robot_trajectory_optimization
 related:
   - continuous_collision_avoidance
-last_updated: 2026-05-10
+  - implicit_svsdf_planner_front_end
+last_updated: 2026-07-04
 ---
 
 # Swept Volume Signed Distance Field (SVSDF)
@@ -29,3 +30,7 @@ Computing SVSDFs involves discretizing time and space and integrating the robot'
 ## Learning Update (2026-05-10)
 
 - SVSDF modeling and distance-evaluation concepts have been learned for continuous collision checking and trajectory-cost shaping.
+
+## Learning Update (2026-07-04)
+
+- Studied how Implicit-SVSDF-Planner uses swept-volume/SVSDF checks inside the A* front end to reject invalid path segments before backend optimization.

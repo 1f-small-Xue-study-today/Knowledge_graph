@@ -10,10 +10,12 @@ Develop advanced motor control features beyond basic FOC, focusing on improving 
 - Incorporate cogging and friction compensation to reduce torque ripple.
 - Perform frequency response and modal analysis to identify resonances.
 - Design notch filters or damping controllers based on identified modes.
+- Apply robust frequency-domain optimization to tune motor-control loops against load variation, delay, noise and resonance limits.
 
 ## Milestones
 
 1. **SVPWM Development:** Implement and test SVPWM and dead‑time compensation on the HC32F460 platform.
 2. **Disturbance Compensation:** Identify cogging torque and friction parameters and integrate compensation algorithms.
 3. **Dynamic Analysis:** Conduct FRF measurements and modal identification to detect resonance frequencies.
-4. **Controller Enhancement:** Develop notch filters or feedback modifications to attenuate resonances and validate improvements.
+4. **Robust Frequency-Domain Design:** Optimize loop shape, stability margins, sensitivity and complementary sensitivity for the measured motor/load plant.
+5. **Controller Enhancement:** Develop notch filters or feedback modifications to attenuate resonances and validate improvements.

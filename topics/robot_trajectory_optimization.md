@@ -11,7 +11,8 @@ prerequisites:
 related:
   - kinodynamic_planning
   - polynomial_optimization
-last_updated: 2026-03-08
+  - implicit_svsdf_planner_front_end
+last_updated: 2026-07-04
 ---
 
 # Robot Trajectory Optimization
@@ -27,3 +28,7 @@ Trajectory optimization seeks smooth paths that satisfy dynamics and constraints
 - **Convexification:** Formulate approximations (e.g., GP or convex programming) for efficient computation.
 
 Trajectory optimization forms the foundation for kinodynamic planning and collision avoidance algorithms.
+
+## Learning Update (2026-07-04)
+
+- Studied a hierarchical SVSDF planning pipeline where the front end provides a collision-aware path and pose initialization for later orientation generation and backend trajectory optimization.

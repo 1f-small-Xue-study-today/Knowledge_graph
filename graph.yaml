@@ -4,8 +4,10 @@ goals:
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
 
 metadata:
-  last_reviewed: 2026-05-10
+  last_reviewed: 2026-07-04
   review_notes:
+    - added learned Implicit-SVSDF-Planner front-end topic and SVSDF-aware A* implementation skill
+    - added learned robust frequency-domain optimization topic and connected it to motor-control implementation
     - updated learned statuses for SVSDF, LADRC, and gimbal disturbance rejection
     - removed outdated March-April 2026 plan file after completion
     - retained MATLAB demo structure and optimization-method extensions
@@ -143,6 +145,14 @@ topics:
     prerequisites:
       - signal_processing
       - state_space_model
+  - id: robust_frequency_domain_optimization
+    name: Robust Frequency-Domain Optimization
+    level: advanced
+    prerequisites:
+      - control_theory
+      - frf_analysis
+      - pmsm_model
+      - optimal_control
   - id: modal_identification
     name: Modal Identification
     level: advanced
@@ -186,6 +196,14 @@ topics:
     prerequisites:
       - kinodynamic_planning
       - svsdf
+  - id: implicit_svsdf_planner_front_end
+    name: Implicit SVSDF Planner Front End
+    level: advanced
+    prerequisites:
+      - kinodynamic_planning
+      - svsdf
+      - continuous_collision_avoidance
+      - robot_trajectory_optimization
   - id: ransac
     name: RANSAC (Random Sample Consensus)
     level: intermediate
@@ -282,6 +300,13 @@ skills:
     requires:
       - frf_analysis
       - modal_identification
+  - id: design_robust_frequency_domain_controller
+    name: Design Robust Frequency-Domain Controller
+    requires:
+      - robust_frequency_domain_optimization
+      - frf_analysis
+      - pmsm_model
+      - optimal_control
   - id: perform_modal_identification
     name: Perform Modal Identification
     requires:
@@ -316,6 +341,13 @@ skills:
       - continuous_collision_avoidance
       - kinodynamic_planning
       - svsdf
+  - id: implement_svsdf_astar_front_end
+    name: Implement SVSDF-Aware A* Front End
+    requires:
+      - implicit_svsdf_planner_front_end
+      - svsdf
+      - continuous_collision_avoidance
+      - kinodynamic_planning
   - id: implement_polynomial_optimizer
     name: Implement Polynomial Trajectory Optimizer
     requires:
@@ -364,6 +396,7 @@ projects:
       - implement_cogging_compensation
       - implement_friction_compensation
       - perform_frf_analysis
+      - design_robust_frequency_domain_controller
       - perform_modal_identification
   - id: planning_algorithms_project
     name: Robot Planning Algorithms Project
@@ -371,6 +404,7 @@ projects:
       - design_trajectory_optimization
       - implement_polynomial_optimizer
       - implement_kinodynamic_planner
+      - implement_svsdf_astar_front_end
       - implement_continuous_collision_avoidance
       - implement_svsdf
   - id: optimization_methods_project
