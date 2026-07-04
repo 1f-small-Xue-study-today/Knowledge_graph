@@ -6,6 +6,7 @@ goals:
 metadata:
   last_reviewed: 2026-07-04
   review_notes:
+    - added future DOB/LADRC observer weekly plan and motor/gimbal failure-analysis skills
     - added learned Implicit-SVSDF-Planner front-end topic and SVSDF-aware A* implementation skill
     - added learned robust frequency-domain optimization topic and connected it to motor-control implementation
     - updated learned statuses for SVSDF, LADRC, and gimbal disturbance rejection
@@ -319,6 +320,20 @@ skills:
       - implement_ladrc_controller
       - design_eso
       - pmsm_model
+  - id: perform_motor_failure_analysis
+    name: Perform Motor Failure Analysis
+    requires:
+      - motor_control_fundamentals
+      - pmsm_model
+      - foc
+      - perform_frf_analysis
+  - id: perform_gimbal_failure_analysis
+    name: Perform Gimbal Failure Analysis
+    requires:
+      - gimbal_disturbance_rejection
+      - implement_gimbal_disturbance_rejection
+      - design_eso
+      - perform_motor_failure_analysis
   - id: design_trajectory_optimization
     name: Design Trajectory Optimization Algorithm
     requires:
