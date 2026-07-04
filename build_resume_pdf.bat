@@ -2,8 +2,21 @@
 setlocal
 
 set "PROJECT_ROOT=%~dp0"
-set "RESUME_DIR=%PROJECT_ROOT%resume\All_in_one"
+set "RESUME_NAME=%~1"
+if "%RESUME_NAME%"=="" set "RESUME_NAME=All_in_one"
+set "RESUME_DIR=%PROJECT_ROOT%resume\%RESUME_NAME%"
 set "PDFLATEX=%LOCALAPPDATA%\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe"
+
+if not exist "%RESUME_DIR%\main.tex" (
+  echo Resume source not found:
+  echo %RESUME_DIR%\main.tex
+  echo.
+  echo Usage:
+  echo   build_resume_pdf.bat All_in_one
+  echo   build_resume_pdf.bat apple
+  echo   build_resume_pdf.bat academic
+  exit /b 1
+)
 
 if not exist "%PDFLATEX%" (
   echo MiKTeX pdflatex.exe not found at:
