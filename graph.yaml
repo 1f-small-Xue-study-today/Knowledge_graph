@@ -6,6 +6,8 @@ goals:
 metadata:
   last_reviewed: 2026-07-04
   review_notes:
+    - added Fusion 360 UAV mechanical and aerodynamic design capability
+    - expanded modal identification knowledge and added robotics kinematics/dynamics capability
     - added future DOB/LADRC observer weekly plan and motor/gimbal failure-analysis skills
     - added learned Implicit-SVSDF-Planner front-end topic and SVSDF-aware A* implementation skill
     - added learned robust frequency-domain optimization topic and connected it to motor-control implementation
@@ -173,6 +175,19 @@ topics:
       - optimal_control
       - linear_algebra
       - state_space_model
+  - id: robotics_kinematics_dynamics
+    name: Robotics Kinematics and Dynamics
+    level: advanced
+    prerequisites:
+      - linear_algebra
+      - state_space_model
+      - control_theory
+  - id: fusion360_uav_mechanical_design
+    name: Fusion 360 UAV Mechanical Design
+    level: advanced
+    prerequisites:
+      - linear_algebra
+      - robotics_kinematics_dynamics
   - id: kinodynamic_planning
     name: Kinodynamic Planning
     level: advanced
@@ -313,6 +328,8 @@ skills:
     requires:
       - modal_identification
       - frf_analysis
+      - pmsm_model
+      - signal_processing
   - id: implement_gimbal_disturbance_rejection
     name: Implement Gimbal Disturbance Rejection
     requires:
@@ -340,6 +357,19 @@ skills:
       - robot_trajectory_optimization
       - polynomial_optimization
       - state_space_model
+  - id: apply_robotics_kinematics_dynamics
+    name: Apply Robotics Kinematics and Dynamics
+    requires:
+      - robotics_kinematics_dynamics
+      - linear_algebra
+      - state_space_model
+      - control_theory
+  - id: design_uav_mechanical_systems_fusion360
+    name: Design UAV Mechanical Systems in Fusion 360
+    requires:
+      - fusion360_uav_mechanical_design
+      - robotics_kinematics_dynamics
+      - modal_identification
   - id: implement_kinodynamic_planner
     name: Implement Kinodynamic Planner
     requires:
@@ -416,6 +446,7 @@ projects:
   - id: planning_algorithms_project
     name: Robot Planning Algorithms Project
     requires:
+      - apply_robotics_kinematics_dynamics
       - design_trajectory_optimization
       - implement_polynomial_optimizer
       - implement_kinodynamic_planner

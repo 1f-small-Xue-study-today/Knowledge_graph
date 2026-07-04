@@ -12,6 +12,7 @@ related:
   - kinodynamic_planning
   - polynomial_optimization
   - implicit_svsdf_planner_front_end
+  - robotics_kinematics_dynamics
 last_updated: 2026-07-04
 ---
 
@@ -32,3 +33,4 @@ Trajectory optimization forms the foundation for kinodynamic planning and collis
 ## Learning Update (2026-07-04)
 
 - Studied a hierarchical SVSDF planning pipeline where the front end provides a collision-aware path and pose initialization for later orientation generation and backend trajectory optimization.
+- Recorded strong robotics modeling capability, including state transforms, Jacobians, and dynamics, as a foundation for trajectory optimization and kinodynamic planning.
