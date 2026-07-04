@@ -2,5 +2,10 @@
 demo/ransac/homography_implement/example/.python-3.7.9/
 demo/ransac/homography_implement/example/.venv/
 
-resume/Engineer/*
-!resume/Engineer/main.tex
+resume/**/*.aux
+resume/**/*.log
+resume/**/*.out
+resume/**/*.pdf
+resume/**/*.synctex.gz
+resume/**/*.fls
+resume/**/*.fdb_latexmk

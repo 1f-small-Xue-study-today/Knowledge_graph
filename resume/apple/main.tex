@@ -1,0 +1,239 @@
+%-------------------------
+% Resume in Latex
+% Author : Gennadii Chursov
+% Based off of: https://github.com/sb2nov/resume and https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Ruize Xue} \\ \vspace{1pt}
+    \small \textit{Robotics / Control Engineer} \\
+    \href{mailto:xrz836884211@gmail.com}{\underline{xrz836884211@gmail.com}} $|$
+    18640745980 $|$
+    Shenzhen, China
+\end{center}
+
+%-----------TARGET TITLE-----------
+\section{Target Title}
+\small{Automation Engineer - Robotics and AI/ML}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\small{
+Robotics and control engineer focused on gimbal control, embedded motor validation, and hardware-software integration. Experienced in system-identification-based motor testing, MCU-deployable ML diagnostics, reliability standards, and automated validation workflows using Python, C++, MATLAB/Simulink, GDB-JLink, UART, and lab instrumentation. Research background spans mobile robot arm planning, collision avoidance, tailsitter UAV control.
+}
+
+%-----------CORE TECHNICAL SKILLS-----------
+\section{Core Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Robotics \& Control}{: Motor control, PID/LQR/MPC, LADRC/ESO design, sensor fusion in gimbal systems, trajectory generation} \\
+     \textbf{Automation \& Validation}{: Motor \& gimbal test plan design \& implementation, FRF analysis, modal identification, signal acquisition, data analysis} \\
+     \textbf{Software}{: Python, C++, C, MATLAB/Simulink, Git, Linux} \\
+     \textbf{Embedded/Hardware}{: MCU development, ADC/DMA, PWM, motor drivers, sensors, oscilloscope/data acquisition} \\
+     \textbf{Path Planning / AI-related}{: path planning, collision avoidance, Machine Learning} \\
+     \textbf{CAD/Fabrication}{: Fusion 360, SolidWorks, 3D printing}
+    }}
+ \end{itemize}
+
+%-----------PROFESSIONAL EXPERIENCE-----------
+\section{Work Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Gimbal Control Algorithm Engineer}{2024.07 -- Present}
+      {Insta360}{Shenzhen, China}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{0-to-1 Gimbal Motor Test Plan \& Implementation}} \\
+        \small{Developed a system-identification-based motor test methodology to quantitatively characterize cogging torque, friction, resistance, inductance, and Hall sensor health. Built a server-based workflow for automated data acquisition, analysis, and report generation, improving supplier validation, failure-analysis efficiency, and design-engineering decisions for motor manufacturing quality.}}
+        \resumeItem{\normalsize{\textbf{L-SVM Collision Detection for Gimbal Protection}} \\
+        \small{Designed an L-SVM-based collision detector on MCU to identify user-induced gimbal collision events that could deform the motor structure and degrade control performance. Proposed user-facing calibration as a core product function, improving product robustness and competitive differentiation against competing gimbal systems.}}
+        \resumeItem{\normalsize{\textbf{Motor Reliability Test Standard \& Gimbal Health Check Ownership}} \\
+        \small{Owned motor reliability test standard development for the gimbal project and defined health-check methods across both control and motor domains. Supported ongoing gimbal product development by diagnosing reliability issues, validating motor-side risks, and maintaining control-performance health criteria.}}
+\resumeItem{\normalsize{\textbf{Automation Agent for Code Development \& Jira Verification}} \\
+        \small{Developed an automated agent workflow that reads Lark documentation through Lark CLI, implements functions inside the firmware repository, and verifies features or bug fixes through self-developed GDB-JLink MCP and UART CLI, digital power supply MCP, and SoC-related CLIs. Enabled the agent to collect validation evidence and send verification feedback to Lark or Jira.}}
+        \resumeItem{\normalsize{\textbf{Optimal Controller Design for Gimbal Control}} \\
+        \small{Researched a robust frequency-domain optimization method for automatic controller generation, simplifying controller elements while maintaining performance comparable to the existing hand-tuned design. Derived the closed-form mathematical solution and verified the principle in MATLAB using frequency-response, stability-margin, tracking, and disturbance-rejection metrics.}}
+        
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------PART-TIME RESEARCH-----------
+\section{Part-Time Research Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Part-time Researcher}{2024.12 -- Present}
+      {Mobile Robot Arm: Non-Collision Trajectory Generation for Randomly Shaped End Loads}{3rd author, RAL submission}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{Front-End Path Sampling with Hybrid A* and RRT*}} \\
+        \small{Developed a sample-based planning framework using A*-based path sampling for the two-wheel robotic base and RRT* in joint space for the 6-axis robot arm, targeting collision-free execution across complex obstacle scenes.}}
+        \resumeItem{\normalsize{\textbf{Engineering Implementation for Real Experiments}} \\
+        \small{Implemented the planning pipeline in Python/C++/MATLAB and prepared it for real experiments by integrating robot models, collision checking, trajectory export, and validation metrics including planning time, tracking error, safety margin, and success rate.}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Other Related Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Robotics R\&D Intern}{2023.12 -- 2024.06}
+      {Dongguan DiaBot Technology}{Dongguan, China}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{Wheel-Legged Robot + Manipulator Grasping Control}} \\
+        \small{Adapted a partner startup's self-developed robotic arm and evaluated lightweight replacement options. Designed a geometry-based inverse kinematics solver, implemented head-stabilization behavior, and ported forward/inverse kinematics, interpolation, and cascaded control algorithms to the wheel-legged robot motion controller without ROS. Delivered a wheel-legged robot + manipulator demo shown to visitors from Huawei and Professor Li's startup incubation base.}}
+        \resumeItem{\normalsize{\textbf{Core-XY Battery-Swap Station Demo for Tita Robot}} \\
+        \small{Co-designed a battery-swap station prototype with mechanical engineers from 0 to 1. Built an XYZ motion-control framework using a Core-XY structure and stepper motors, enabling the robot to enter the station and automatically replace its battery. Contributed to patent CN118559741A, currently under substantive examination.}}
+        \resumeItem{\normalsize{\textbf{Tita Wheel-Legged Robot Jumping Impact Measurement}} \\
+        \small{Built a high-frequency IMU acquisition device using UDP and ESP32, then developed a MATLAB App Designer host tool for IMU parameter calibration and EKF-based attitude estimation. Delivered the internal test device to the mechanical team; the tool remains in internal use. Contributed to patent CN118330258A, currently under substantive examination.}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Tailsitter VTOL UAV Design and Control}{2022.09 -- 2023.08}
+      {MarsLab Thesis Project}{HKU, Hong Kong}
+      \resumeItemListStart
+        \resumeItem{\normalsize{\textbf{High-Efficiency Vertical Takeoff UAV Control}} \\
+        \small{Derived kinematic and dynamic models for a tailsitter UAV and designed a cascaded PID controller in simulation to rapidly verify control logic and navigation behavior. Completed fixed-point navigation in simulation as the owner of dynamics simulation and controller design, and supported indoor hovering on a Vicon + PX4 hardware platform.}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The University of Hong Kong (HKU)}{Hong Kong}
+      {MSc in Mechanical Engineering, MarsLab}{2022.09 -- 2024.07}
+    \resumeSubheading
+      {University of Pittsburgh}{Pittsburgh, PA, USA}
+      {B.S. in Mechanical Engineering}{2021.09 -- 2022.05}
+    \resumeSubheading
+      {Sichuan University}{Chengdu, China}
+      {BEng in Mechanical Design, Manufacturing and Automation}{2018.09 -- 2021.07}
+  \resumeSubHeadingListEnd
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Relevant Coursework}{: Mechatronic System Engineering, UAV Design, Control, and Navigation, Modern Robotics, Machine Learning and Pattern Recognition, Mechatronics, Automatic Control, Robotics and Control}
+    }}
+  \end{itemize}
+
+%-----------PUBLICATIONS-----------
+\section{Publications / Awards}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Swarm-LIO2: Decentralized Efficient LiDAR-Inertial Odometry for Aerial Swarm Systems} \\
+      \textbf{Autonomous Tail-Sitter Flights in Unknown Environments} \\
+      \textbf{AI Ability Certification Award}{: Embedded Software Department, Insta360}
+    }}
+ \end{itemize}
+
+%-----------ADDITIONAL INFORMATION-----------
+\section{Additional Information}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      \textbf{Languages}{: Fluent spoken English; able to work fully in an English-speaking engineering environment.} \\
+      \textbf{Hiring Support}{: Supported part-time technical hiring by sourcing and evaluating highly qualified candidates for the engineering group through professional networks.} \\
+      \textbf{Personal}{: Dog and cat owner.}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

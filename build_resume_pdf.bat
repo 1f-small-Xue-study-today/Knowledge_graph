@@ -2,7 +2,7 @@
 setlocal
 
 set "PROJECT_ROOT=%~dp0"
-set "RESUME_DIR=%PROJECT_ROOT%resume\Engineer"
+set "RESUME_DIR=%PROJECT_ROOT%resume\All_in_one"
 set "PDFLATEX=%LOCALAPPDATA%\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe"
 
 if not exist "%PDFLATEX%" (
