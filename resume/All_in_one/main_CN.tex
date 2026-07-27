@@ -15,6 +15,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
+\usepackage{graphicx}
 \usepackage{fontspec}
 \usepackage{xeCJK}
 
@@ -108,6 +109,18 @@
 具备基于模型的规划控制算法、电机驱动与机械结构设计等交叉技术背景，拥有运动规划、模态诊断、硬件失效分析及软硬件系统快速 Bring-up 经验。熟悉 A*、Hybrid A*、RRT* 等搜索与采样规划算法，以及运动学/动力学约束下的轨迹生成、数值优化和连续碰撞检测方法，能够完成从环境建模、前端路径搜索、轨迹优化到真实机器人验证的完整开发流程。具备较强的新技术学习与工程落地能力，善于运用 AI 工具提升研发、调试和验证效率。熟悉基于系统辨识的控制器设计与电机参数整定、边缘端机器学习诊断、电机传感器标定、工程标准制定及自动化验证流程开发。
 }
 
+\vspace{3pt}
+\noindent
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[height=1.82in,keepaspectratio]{robot-arm-tuned.png}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+  \centering
+  \includegraphics[height=1.82in,keepaspectratio]{uav-tuned.png}
+\end{minipage}
+\vspace{-2pt}
+
 %----------核心技能----------
 \section{核心技能}
  \begin{itemize}[leftmargin=0.15in, label={}]
@@ -123,6 +136,7 @@
 
 %----------工作经历----------
 \section{工作经历}
+\enlargethispage{0.42in}
   \resumeSubHeadingListStart
     \resumeSubheading
       {云台控制算法工程师}{2024.07 -- 至今}
@@ -145,15 +159,20 @@
 
 %----------兼职科研经历----------
 \section{兼职科研经历}
+\enlargethispage{0.30in}
   \resumeSubHeadingListStart
     \resumeSubheading
       {Part-time Research}{2024.12 -- 至今}
-      {移动机械臂：面向随机形状末端负载的无碰撞轨迹生成}{RAL 投稿，第三作者}
+      {高维移动机械臂：面向随机形状末端负载的实时无碰撞轨迹生成}{RAL 投稿，第三作者}
       \resumeItemListStart
-        \resumeItem{\normalsize{\textbf{基于 Hybrid A* 与 RRT* 的前端路径采样}} \\
-        \small{开发采样式规划框架：使用基于 A* 的方法为两轮移动底盘生成路径样本，并在六轴机械臂关节空间内使用 RRT* 进行规划，以实现复杂障碍场景下的无碰撞运动。}}
-        \resumeItem{\normalsize{\textbf{面向真实实验的工程实现}} \\
-        \small{使用C++ 实现规划流程，集成机器人模型、碰撞检测、轨迹导出及实验的工程实现，以及过程中的debug。}}
+        \resumeItem{\normalsize{\textbf{主导搜索—优化一体化运动规划框架设计}} \\
+        \small{面向移动底盘与六轴机械臂组成的高维强耦合系统，设计并实现从环境建模、前端搜索、可行初值构造、连续轨迹优化到真实执行的完整架构。融合 Hybrid A* 与 RRT* 完成底盘非完整约束搜索与机械臂高维关节空间探索，为非线性优化提供高质量、拓扑可行的轨迹初值。}}
+        \resumeItem{\normalsize{\textbf{基于 MINCO 的高性能轨迹优化器设计与实现}} \\
+        \small{深入推导并实现 MINCO 分段多项式轨迹优化，将高维多项式系数消元为中间状态点与分段时间变量。统一建模轨迹平滑度、执行时间、速度/加速度、关节限位及碰撞代价，完成时空变量的解析梯度推导与反向传播，联合优化轨迹形状与时间分配，生成高阶连续、动力学可行的高质量轨迹。}}
+        \resumeItem{\normalsize{\textbf{面向随机形状末端负载的可微碰撞约束建模}} \\
+        \small{突破固定机器人包络限制，建立连杆、移动底盘与任意形状末端负载的统一可微几何模型；推导连续轨迹碰撞代价与状态梯度，将安全距离、环境障碍及机械臂自碰撞约束嵌入 MINCO，使优化器主动调整轨迹形状与运动时序，在狭窄、密集障碍环境中生成安全、高通过性的无碰撞轨迹。}}
+        \resumeItem{\normalsize{\textbf{高维规划算法工程化与真实机器人闭环验证}} \\
+        \small{使用 C++ 完成核心规划器的模块化实现，打通运动学模型、点云环境、碰撞检测、轨迹优化、控制指令及实验分析链路。系统解决高维搜索效率、优化初值敏感性、数值稳定性、约束权重整定与真实平台轨迹跟踪等关键问题，实现从感知输入到移动机械臂连续运动执行的完整闭环。}}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -202,7 +221,7 @@
 
 %----------论文与奖项----------
 \section{论文与奖项}
-  \begin{itemize}[leftmargin=0.15in, label={}]
+  \begin{itemize}[leftmargin=0.15in, label={}, nosep]
     \small{\item{
       \textbf{Swarm-LIO2: Decentralized Efficient LiDAR-Inertial Odometry for Aerial Swarm Systems} \\
       \textbf{Autonomous Tail-Sitter Flights in Unknown Environments} \\
@@ -212,7 +231,7 @@
 
 %----------其他信息----------
 \section{其他信息}
-  \begin{itemize}[leftmargin=0.15in, label={}]
+  \begin{itemize}[leftmargin=0.15in, label={}, nosep]
     \small{\item{
       \textbf{语言能力}{：英语口语流利，可适应全英文工程协作环境。} \\
       \textbf{招聘支持}{：通过专业人脉协助工程团队开展兼职技术招聘，搜寻并评估高质量候选人。} \\
