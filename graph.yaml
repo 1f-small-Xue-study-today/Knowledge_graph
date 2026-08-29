@@ -2,9 +2,10 @@ goals:
   - master advanced motor control and estimation, and Gimbal control algorithms, with a focus on practical implementation on the HC32F460 platform
   - integrate AI agents effectively into development workflow
   - develop Planning (minco/optimization) based algorithms, for robot path and motion planning, mainly focus on Mobile robot
+  - learn generative manipulation policies (diffusion, flow matching, VLA) and deploy them behind a conventional multi-rate control stack
 
 metadata:
-  last_reviewed: 2026-07-04
+  last_reviewed: 2026-08-29
   review_notes:
     - added starter numerical optimization topic and basic optimization skill
     - added Fusion 360 UAV mechanical and aerodynamic design capability
@@ -16,6 +17,7 @@ metadata:
     - removed outdated March-April 2026 plan file after completion
     - retained MATLAB demo structure and optimization-method extensions
     - restored plan folder as a permanent home for short-term and long-term plans
+    - added the learning-based robot manipulation track (imitation learning to diffusion policy to VLA) as topics, skills, and a gated project
 
 topics:
   # Existing topics
@@ -244,6 +246,60 @@ topics:
       - linear_algebra
       - state_space_model
 
+  # Learning-based robot manipulation track
+  - id: behavior_cloning
+    name: Behavior Cloning and Multimodal Action Distributions
+    level: beginner
+    prerequisites:
+      - probability
+      - robotics_kinematics_dynamics
+  - id: action_chunking
+    name: Action Chunking and Temporal Policies
+    level: intermediate
+    prerequisites:
+      - behavior_cloning
+      - robot_trajectory_optimization
+  - id: diffusion_models
+    name: Diffusion Model Fundamentals (DDPM)
+    level: intermediate
+    prerequisites:
+      - probability
+      - numerical_optimization
+  - id: conditional_diffusion
+    name: Conditional Diffusion
+    level: intermediate
+    prerequisites:
+      - diffusion_models
+  - id: diffusion_policy
+    name: Diffusion Policy
+    level: advanced
+    prerequisites:
+      - conditional_diffusion
+      - action_chunking
+  - id: diffusion_policy_3d
+    name: 3D Diffusion Policy (DP3)
+    level: advanced
+    prerequisites:
+      - diffusion_policy
+  - id: flow_matching
+    name: Conditional Flow Matching
+    level: advanced
+    prerequisites:
+      - diffusion_models
+      - state_space_model
+  - id: consistency_models
+    name: Consistency Models for Fast Policy Inference
+    level: advanced
+    prerequisites:
+      - flow_matching
+      - diffusion_policy
+  - id: vision_language_action_models
+    name: Vision-Language-Action Models and Robot Foundation Policies
+    level: advanced
+    prerequisites:
+      - diffusion_policy
+      - flow_matching
+
 skills:
   # Existing skills
   - id: implement_foc_hc32f460
@@ -430,6 +486,36 @@ skills:
       - optimal_control
       - linear_algebra
 
+  # Learning-based robot manipulation track
+  - id: implement_toy_diffusion_pytorch
+    name: Implement a Toy Diffusion Model in PyTorch
+    requires:
+      - diffusion_models
+      - conditional_diffusion
+  - id: reproduce_diffusion_policy_pusht
+    name: Reproduce Diffusion Policy on Push-T
+    requires:
+      - diffusion_policy
+      - action_chunking
+      - implement_toy_diffusion_pytorch
+  - id: compare_manipulation_policies
+    name: Compare BC, ACT, and Diffusion Policy
+    requires:
+      - behavior_cloning
+      - action_chunking
+      - diffusion_policy
+  - id: deploy_learned_manipulation_policy
+    name: Deploy a Learned Manipulation Policy on a Real Robot
+    requires:
+      - diffusion_policy
+      - apply_robotics_kinematics_dynamics
+      - continuous_collision_avoidance
+  - id: collect_robot_demonstration_dataset
+    name: Build a Small Real-Robot Demonstration Dataset
+    requires:
+      - behavior_cloning
+      - apply_robotics_kinematics_dynamics
+
 projects:
   # Existing projects
   - id: motor_control_platform_project
@@ -478,6 +564,14 @@ projects:
       - apply_numerical_optimization_basics
       - implement_ransac_demo_matlab
       - implement_l_bfgs_demo_matlab
+  - id: learning_based_manipulation_project
+    name: Learning-Based Robot Manipulation
+    requires:
+      - implement_toy_diffusion_pytorch
+      - reproduce_diffusion_policy_pusht
+      - compare_manipulation_policies
+      - deploy_learned_manipulation_policy
+      - collect_robot_demonstration_dataset
 
 memory:
   - id: motor_model
@@ -488,3 +582,5 @@ memory:
     name: Build Environment
   - id: matlab_demo_structure
     name: MATLAB Demo Structure
+  - id: robot_learning_note_templates
+    name: Robot-Learning Note Templates
