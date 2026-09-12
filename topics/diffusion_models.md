@@ -3,24 +3,28 @@ id: diffusion_models
 type: topic
 name: Diffusion Model Fundamentals (DDPM)
 level: intermediate
-status: not_started
+status: in_progress
 prerequisites:
   - probability
   - numerical_optimization
 related:
   - conditional_diffusion
   - flow_matching
-last_updated: 2026-08-29
+last_updated: 2026-09-12
 ---
 
 # Diffusion Model Fundamentals (DDPM)
 
-This is the mathematical core of the track. Work it out on 1-D/2-D toy distributions, never on robot images.
+**Learning status: In progress — not yet fully understood / 尚未完全理解.** Revisit the lesson and learning checkpoints before marking DDPM as learned.
+
+Open the [interactive DDPM lesson](../demo/ddpm/scripts/index.html). It covers forward noising, noise-prediction training, stochastic reverse sampling, the ELBO connection, and common implementation mistakes. Its reverse-process lab uses an analytic denoiser for a known toy distribution, not a trained neural network.
+
+DDPM means Denoising Diffusion Probabilistic Model. First study one-dimensional toy distributions, then move to higher-dimensional data. The [KL/Jensen foundations](generative_math_foundations.md) are useful prerequisites; full mastery of VAE is not required to start.
 
 ## Forward Process
 
 \[
-q(x_k\mid x_{k-1})=\mathcal N(\sqrt{\alpha_k}x_{k-1},(1-\beta_k)I),\quad
+q(x_k\mid x_{k-1})=\mathcal N(\sqrt{\alpha_k}x_{k-1},\beta_k I),\quad
 \alpha_k=1-\beta_k,\quad \bar\alpha_k=\prod_{i\le k}\alpha_i
 \]
 

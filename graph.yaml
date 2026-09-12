@@ -23,6 +23,8 @@ topics:
   - id: vae
     name: Variational Autoencoders
     level: beginner
+    status: in_progress
+    learning_note: Not yet fully understood; revisit the lesson and learning checkpoints.
     prerequisites:
       - generative_math_foundations
   - id: generative_math_foundations
@@ -273,6 +275,8 @@ topics:
   - id: diffusion_models
     name: Diffusion Model Fundamentals (DDPM)
     level: intermediate
+    status: in_progress
+    learning_note: Not yet fully understood; revisit the DDPM lesson and learning checkpoints.
     prerequisites:
       - probability
       - numerical_optimization
