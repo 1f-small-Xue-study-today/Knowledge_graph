@@ -20,6 +20,12 @@ metadata:
     - added the learning-based robot manipulation track (imitation learning to diffusion policy to VLA) as topics, skills, and a gated project
 
 topics:
+  - id: generative_math_foundations
+    name: Mathematical Foundations for Generative Models
+    level: beginner
+    prerequisites:
+      - probability
+      - linear_algebra
   # Existing topics
   - id: motor_control_fundamentals
     name: Motor Control Fundamentals
