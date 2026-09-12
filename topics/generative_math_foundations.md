@@ -28,4 +28,4 @@ The lesson covers convex functions and their defining properties, Jensen’s ine
 - Derive the ELBO and distinguish KL to the prior from KL to the true posterior.
 - Explain why these results do not imply convex neural network training.
 
-Next: multivariate Gaussians, Monte Carlo estimation, reparameterization, then a toy VAE and diffusion objectives.
+Next: [the interactive VAE lesson](../demo/vae/scripts/index.html), covering Gaussian sampling, reparameterization, a trainable toy VAE, and generation; then diffusion objectives.
