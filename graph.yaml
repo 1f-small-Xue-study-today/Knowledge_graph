@@ -20,6 +20,14 @@ metadata:
     - added the learning-based robot manipulation track (imitation learning to diffusion policy to VLA) as topics, skills, and a gated project
 
 topics:
+  - id: score_based_models
+    name: Score-Based Generative Models
+    level: intermediate
+    status: in_progress
+    learning_note: Not yet fully understood; revisit the score field and sampling explanations.
+    prerequisites:
+      - probability
+      - generative_math_foundations
   - id: vae
     name: Variational Autoencoders
     level: beginner

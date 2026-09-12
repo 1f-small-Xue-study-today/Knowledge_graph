@@ -42,5 +42,7 @@ For fixed observation o, this is an ODE parameterized by context, so inference i
 
 ## Representative Work
 
+Next learning topic: [Score-Based Generative Models](score_based_models.md), with an [interactive lesson](../demo/score_based_models/scripts/index.html).
+
 - Chisari et al., *Manipulation Policies from Point Clouds with Conditional Flow Matching*, CoRL 2025 — https://proceedings.mlr.press/v270/chisari25a.html
 - Black et al., *\(\pi_0\)* — https://arxiv.org/abs/2410.24164
