@@ -1,19 +1,27 @@
 ---
 id: flow_matching
 type: topic
-name: Conditional Flow Matching
+name: Flow Matching and Conditional Flow Matching
 level: advanced
-status: not_started
+status: in_progress
 prerequisites:
   - diffusion_models
   - state_space_model
 related:
   - consistency_models
   - vision_language_action_models
-last_updated: 2026-08-29
+last_updated: 2026-09-12
 ---
 
-# Conditional Flow Matching
+# Flow Matching and Conditional Flow Matching
+
+**Learning status: In progress — understanding not yet confirmed.**
+
+Open the [interactive Flow Matching lesson](../demo/flow_matching/scripts/index.html). Start with linear interpolation and velocity regression, then explore the marginal velocity field and compare Euler with Heun integration. The sampler uses an analytic toy velocity field, not a trained network.
+
+The lesson uses t = 0 for noise and t = 1 for data. Training samples an intermediate time directly; generation solves an ODE. It also distinguishes conditional flow-matching training from observation-conditioned generation. DDPM and VAE remain separate, unfinished learning topics.
+
+The [3D field view](../demo/flow_matching/scripts/index.html#field3d) shows two data coordinates plus flow time, with rotatable velocity arrows, integrated particle trajectories, playback, and a numerical velocity probe. The third axis is time, not a third spatial coordinate.
 
 ## Overview
 
@@ -23,7 +31,7 @@ Instead of a stochastic denoising chain, learn a velocity field transporting a s
 \frac{dx}{dt}=v_\theta(x,t\mid o)
 \]
 
-This is a controlled ODE \(\dot x=f_\theta(x,t,o)\), so inference is numerical integration — directly familiar from the control/planning background.
+For fixed observation o, this is an ODE parameterized by context, so inference is numerical integration — familiar from the control/planning background. The integration variable t is generative time, not the robot's physical execution time, and this formulation alone does not imply closed-loop feedback or stability.
 
 ## Questions
 

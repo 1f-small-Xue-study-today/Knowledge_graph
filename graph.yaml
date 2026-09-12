@@ -297,8 +297,10 @@ topics:
     prerequisites:
       - diffusion_policy
   - id: flow_matching
-    name: Conditional Flow Matching
+    name: Flow Matching and Conditional Flow Matching
     level: advanced
+    status: in_progress
+    learning_note: Flow Matching lesson started; understanding not yet confirmed.
     prerequisites:
       - diffusion_models
       - state_space_model

@@ -53,3 +53,5 @@ Understand: why predicting noise is enough to get the denoising direction; why o
 ## Exit Criterion
 
 Explain without notes: (1) why noise is added during training, (2) what the network predicts, (3) how generation starts from noise, (4) why repeated denoising recovers samples from a complicated distribution.
+
+Next: [Flow Matching](flow_matching.md), with an [interactive velocity-field and ODE lesson](../demo/flow_matching/scripts/index.html). DDPM remains not yet fully understood.
