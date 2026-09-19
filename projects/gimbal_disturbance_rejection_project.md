@@ -17,3 +17,6 @@ This project focuses on implementing robust disturbance rejection techniques for
 2. **Observer and Controller Implementation:** Implement ESO and LADRC for each axis and integrate cogging/friction compensation.
 3. **Integration and Tuning:** Combine components on the HC32F460 platform; tune gains through simulation and experiments.
 4. **Testing and Validation:** Evaluate disturbance rejection performance using controlled disturbance inputs and field tests.
+## Related
+
+- [MIMO FRF to Structured Controller SOP](mimo_frf_structured_controller_sop.md) — data/model/uncertainty/synthesis workflow and stage gates used for the anti-shake controller.

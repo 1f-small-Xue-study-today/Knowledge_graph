@@ -25,3 +25,7 @@ Design and tune a robust motor controller from modeled or measured frequency res
 - Confirm gain margin, phase margin, crossover frequency, and resonance attenuation from the closed-loop response.
 - Compare measured hardware response against the optimized frequency-domain prediction.
 - Verify that performance remains acceptable under motor/load variation and sensor-noise changes.
+
+## Related
+
+- [MIMO FRF to Structured Controller SOP](../projects/mimo_frf_structured_controller_sop.md) — end-to-end workflow from multi-pose MIMO FRF data to a deployable low-order structured controller.

@@ -572,6 +572,14 @@ projects:
       - implement_friction_compensation
       - perform_frf_analysis
       - design_robust_frequency_domain_controller
+  - id: mimo_frf_structured_controller_sop
+    name: MIMO FRF to Structured Controller SOP
+    requires:
+      - perform_frf_analysis
+      - perform_modal_identification
+      - design_robust_frequency_domain_controller
+      - implement_ladrc_controller
+      - implement_gimbal_disturbance_rejection
       - perform_modal_identification
   - id: planning_algorithms_project
     name: Robot Planning Algorithms Project
